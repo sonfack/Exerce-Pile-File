@@ -1,6 +1,9 @@
 from Bib_TDA_PFA import *
 
 class SuperPile(Pile):
+    """
+    La classe SuperPile hérite de la classe pile et implement les méthodes liées à cette classe
+    """
 
     def __init__(self, liste=[]):
         if len(liste) == 0: 
@@ -20,9 +23,7 @@ class SuperPile(Pile):
     def Afficher(self):
         while (not self.EstVide()):
             print(self.Retirer())
-
-
-
+            
 
     # Affichage recursif inverse
     def AfficherRecursiveInverse(self):
@@ -40,11 +41,7 @@ class SuperPile(Pile):
             self.AfficherRecursive()
 
 
-
-
-
-            
-
+    # Compte le nombre d'element dans la pile
     def CompterElement(self):
         count = 0
         while not self.EstVide():
@@ -52,19 +49,12 @@ class SuperPile(Pile):
             count = count + 1
         return count 
 
-
-
-
     
-
-
-
-
-    
-
-
     
 class SuperFile(File):
+    """
+    La classe SuperFile hérite de la classe File et implement les méthodes liées à cette classe
+    """
 
     def __init__(self, liste=[]):
         if len(liste) == 0 : 
@@ -78,7 +68,7 @@ class SuperFile(File):
 
 
 
-    # EXO 4
+    # EXO 4 les éléments de rang pair dans une file (filePaire) et ceux de rang impair dans une autre file (fileImpaire)
     def RangerPairImpair(self):
         filePair = File()
         fileImpair = File()
@@ -95,11 +85,7 @@ class SuperFile(File):
         
 
 
-
-
-
-
-    
+     # EXO 4 version recursive les éléments de rang pair dans une file (filePaire) et ceux de rang impair dans une autre file (fileImpaire)
     def RangerPairImpairRecursive(self, fp, fi):
         if not self.EstVide():
             if self.Premier() % 2 == 0:
@@ -109,12 +95,8 @@ class SuperFile(File):
             self.RangerPairImpairRecursive(fp, fi)
         
 
-
-
-
-
             
-            
+    # Affiche les éléments de la file        
     def Afficher(self):
         if not self.EstVide():
             print(self.Retirer())
